@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { ScriptProps } from "next/script";
 
-const Home: NextPage = () => {
+const Home: NextPage<ScriptProps> = ({ title }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
             // https://vercel.com/docs/concepts/projects/environment-variables
             `${
               process.env.VERCEL_URL ? "https://" + process.env.VERCEL_URL : ""
-            }/api/og`
+            }/api/og?title=` + title
           }
         />
       </Head>
@@ -93,6 +94,15 @@ const Home: NextPage = () => {
       </footer>
     </div>
   );
+};
+
+//ssr
+export const getServerSideProps = async () => {
+  return {
+    props: {
+      title: "Solving basic problems in JS.",
+    },
+  };
 };
 
 export default Home;
