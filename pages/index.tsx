@@ -1,93 +1,76 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <meta name="og:title" content="Vercel Edge Network" />
-        <meta name="og:description" content="Vercel Edge Network" />
-        <meta
-          name="og:image"
-          content={
-            `${
-              process.env.VERCEL_URL ? "https://" + process.env.VERCEL_URL : ""
-            }/api/og` + `?title=Solving basic problems in JS.`
-          }
-        />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{" "}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{" "}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
-    </div>
+    <main className="bg-[#121212] h-screen flex justify-center">
+      <section className="w-full md:w-2/3 lg:w-2/5 mt-[90px] text-white mx-4">
+        <h1 className="text-4xl font-bold">About</h1>
+        {/* navbar */}
+        <nav className="my-11">
+          <ul className="flex justify-end gap-4 ">
+            <li>
+              <Link href="/">
+                <a className="text-gray-400">About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects">
+                <a className="underline">Projects</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/posts">
+                <a className="underline">Posts</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        {/* info about */}
+        <article className="">
+          <p className="mb-4">
+            Hey, I&apos;m a Senior Software Engineer at Company. I enjoy working
+            with Next.js and crafting beautiful front-end experiences.
+          </p>
+          <p className="mb-4">
+            Desarrollador de Software enfocado en producir software de manera
+            eficaz, con metodologías y equipos de desarrollo ágil. Actualmente
+            estudio en el Tec de Delicias, Chihuahua
+          </p>
+        </article>
+        {/* divider */}
+        <div className="w-full my-14 border-gray-600 border-[1px] border-b-transparent" />
+        {/* social */}
+        <article>
+          <ul className="flex flex-col gap-3">
+            <li className="flex gap-2 ">
+              <p>LinkedIn</p>
+              <a href="#" className="underline">
+                ↗
+              </a>
+            </li>
+            <li className="flex gap-2">
+              <p>GitHub</p>
+              <a href="#" className="underline">
+                ↗
+              </a>
+            </li>
+            <li className="flex gap-2">
+              <p>Email</p>
+              <a href="#" className="underline">
+                ↗
+              </a>
+            </li>
+            <li className="flex gap-2">
+              <p>CV</p>
+              <a href="#" className="underline">
+                ↗
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
   );
 };
 
