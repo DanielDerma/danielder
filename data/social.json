@@ -1,0 +1,24 @@
+{
+  "social": [
+    {
+      "name": "LinkedIn",
+      "link": "https://www.linkedin.com/in/daniel-derma-90a481221/"
+    },
+    {
+      "name": "GitHub",
+      "link": "https://github.com/DanielDerma"
+    },
+    {
+      "name": "YouTube (Coffee DEV)",
+      "link": "https://www.youtube.com/channel/UCw1Opi2WMA3vvTnOKR55PSQ"
+    },
+    {
+      "name": "Email",
+      "link": "mailto:danielderma.contact@gmail.com"
+    },
+    {
+      "name": "CV",
+      "link": "https://drive.google.com/file/d/12kto4iF1bDwZ64ixdP3_iPj_8F73dsd6/view"
+    }
+  ]
+}

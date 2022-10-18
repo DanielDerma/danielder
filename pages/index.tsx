@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
+import social from "../data/social.json";
 import Link from "next/link";
 
 const Home: NextPage = () => {
+  const data = social["social"];
   return (
-    <main className="bg-[#121212] h-screen flex justify-center">
-      <section className="w-full md:w-2/3 lg:w-2/5 mt-[90px] text-white mx-4">
+    <main className="bg-[#121212] min-h-screen flex justify-center">
+      <section className="w-full pt-20 pb-32 mx-4 text-white md:w-2/3 lg:w-2/5">
         <h1 className="text-4xl font-bold">About</h1>
         {/* navbar */}
         <nav className="my-11">
@@ -43,32 +45,24 @@ const Home: NextPage = () => {
         {/* social */}
         <article>
           <ul className="flex flex-col gap-3">
-            <li className="flex gap-2 ">
-              <p>LinkedIn</p>
-              <a href="#" className="underline">
-                ↗
-              </a>
-            </li>
-            <li className="flex gap-2">
-              <p>GitHub</p>
-              <a href="#" className="underline">
-                ↗
-              </a>
-            </li>
-            <li className="flex gap-2">
-              <p>Email</p>
-              <a href="#" className="underline">
-                ↗
-              </a>
-            </li>
-            <li className="flex gap-2">
-              <p>CV</p>
-              <a href="#" className="underline">
-                ↗
-              </a>
-            </li>
+            {data.map(({ name, link }) => (
+              <li className="flex gap-2 " key={link}>
+                <p>{name}</p>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline"
+                >
+                  ↗
+                </a>
+              </li>
+            ))}
           </ul>
         </article>
+        <footer className="mt-32">
+          <p>© Daniel Derma.</p>
+        </footer>
       </section>
     </main>
   );
