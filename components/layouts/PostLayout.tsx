@@ -7,6 +7,7 @@ const Post = ({ meta, children }: { meta: any; children: any }) => {
   return (
     <>
       <Head>
+        <title>{title} | DanielDerma</title>
         <meta name="og:title" content="Daniel Derma" />
         <meta name="og:description" content="Daniel Derma | Posts" />
         <meta
