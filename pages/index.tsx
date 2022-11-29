@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>DanielDerma | About</title>
+        <title>Daniel Derma | About</title>
       </Head>
       <main className="bg-[#121212] min-h-screen flex justify-center">
         <section className="w-full pt-20 pb-32 mx-4 text-white md:w-2/3 lg:w-2/5">
